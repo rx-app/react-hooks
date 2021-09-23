@@ -1,25 +1,30 @@
-import React, { useReducer,createContext,useContext } from 'react';
+import React,{useState,createRef,useContext, Component,useRef} from "react";
 
-const countContext = createContext()
 
-function Count(props){
-  return (
-    <div>
-      {props.a}
-    </div>
-  )
-}
+// class App extends Component{
+//   inputRef = createRef();
+//   render(){
+//     return (
+//       <>
+//         <input type="text" ref={this.inputRef} />
+//         <button onClick={ ()=> this.inputRef.current.focus()  }>点击</button>
+//       </>
+//     )
+//   }
+// }
 
-function App(){
-    
+
+
+
+
+function App() {
+  
     return (
-       <div>
-         <countContext.Provider value={20}>
-           <Count a={12}></Count>
-         </countContext.Provider>
-       </div>
+          <>
+            <input type="text" ref={this.inputRef} />
+            <button onClick={ ()=> this.inputRef.current.focus()  }>点击</button>
+          </>
     )
-
 }
 
-export default App
+export default App;
