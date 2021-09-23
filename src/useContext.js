@@ -1,7 +1,28 @@
-import React,{useState,createContext,useContext} from "react";
-import './app.css'
+import React,{useState,createContext,useContext, Component} from "react";
 
 const CountContext = createContext()
+
+class Foo extends Component{
+  render(){
+    return (
+      <CountContext.Consumer>
+        { value => <div>{value}</div> }
+      </CountContext.Consumer>
+    )
+  }
+}
+
+class Bar extends Component{
+  static contextType = CountContext  //这里必须叫 contextType
+  render(){
+    let val = this.context 
+    return (
+      
+         <div>{val}</div>
+     
+    )
+  }
+}
 
 function Counter(){
   const count = useContext(CountContext)  //一句话就可以得到count
@@ -16,6 +37,8 @@ function App() {
             <button onClick={()=>{setCount(count+1)}}>click me</button>
             <CountContext.Provider value={count}>
               <Counter />
+              <Foo></Foo>
+              <Bar />
             </CountContext.Provider>
         </div>
     )
