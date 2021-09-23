@@ -18,11 +18,12 @@ import React,{useState,createRef,useContext, Component,useRef} from "react";
 
 
 function App() {
-  
+    const inputRef = useRef(null)
+    
     return (
           <>
-            <input type="text" ref={this.inputRef} />
-            <button onClick={ ()=> this.inputRef.current.focus()  }>点击</button>
+            <input type="text" ref={inputRef} />
+            <button onClick={ ()=> inputRef.current.focus()  }>点击</button>
           </>
     )
 }
