@@ -1,7 +1,7 @@
-import React,{useState,createRef,useContext, Component,useRef} from "react";
+import React,{useState,createRef,useContext, Component,useRef, forwardRef} from "react";
 
 
-// class App extends Component{
+// class Foo extends Component{
 //   inputRef = createRef();
 //   render(){
 //     return (
@@ -13,17 +13,28 @@ import React,{useState,createRef,useContext, Component,useRef} from "react";
 //   }
 // }
 
+const Foo = forwardRef((params,ref)=> {
+  // const inputRef = useRef(null)
+  return (
+    <>
+      <input type='text' ref={inputRef} />
+      <button onClick={ ()=> inputRef.current.focus() }>点击</button>
+    </>
+  )
+})
+
 
 
 
 
 function App() {
-    const inputRef = useRef(null)
+    const fooRef = useRef(null)
     
     return (
           <>
-            <input type="text" ref={inputRef} />
-            <button onClick={ ()=> inputRef.current.focus()  }>点击</button>
+            <Foo ref={fooRef}/>
+            {/* 用ref获取子组件实例 但是组件时函数组件时，不能使用 */}
+            <button onClick={ ()=> fooRef.current.inputRef.current.focus()  }>点击</button>
           </>
     )
 }
