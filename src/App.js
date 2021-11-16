@@ -1,25 +1,11 @@
-import React, { useReducer,createContext,useContext } from 'react';
-
-const countContext = createContext()
-
-function Count(props){
+import React,{useState} from "react";
+function Example() {
+  const [count, setCount] = useState(0);
   return (
     <div>
-      {props.a}
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
-  )
+  );
 }
-
-function App(){
-    
-    return (
-       <div>
-         <countContext.Provider value={20}>
-           <Count a={12}></Count>
-         </countContext.Provider>
-       </div>
-    )
-
-}
-
-export default App
+export default Example;
