@@ -1,11 +1,15 @@
 import React,{useState} from "react";
-function Example() {
-  const [count, setCount] = useState(0);
+import Test from './components/Test'
+
+function App() {
+  const [title, setTitle] = useState('标题');
+  const changeTitle = ()=>{
+    setTitle('标题变了')
+  }
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <Test title={title} changeTitle={changeTitle} />
     </div>
   );
 }
-export default Example;
+export default App;
