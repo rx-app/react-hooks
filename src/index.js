@@ -5,7 +5,7 @@ import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App  list ={ [ 'aaa' , 'bbb' , 'ccc'  ] } />
   </React.StrictMode>,
   document.getElementById('root')
 );
