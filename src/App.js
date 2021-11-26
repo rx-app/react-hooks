@@ -1,14 +1,13 @@
 import React,{useState} from "react";
-import Test from './components/Test'
+import MyHeader from './components/Header';
+import AddInput from './components/AddInput';
 
 function App() {
-  const [title, setTitle] = useState('标题');
-  const changeTitle = ()=>{
-    setTitle('标题变了')
-  }
+  
   return (
     <div>
-      <Test title={title} changeTitle={changeTitle} />
+      <MyHeader />
+      <AddInput />
     </div>
   );
 }

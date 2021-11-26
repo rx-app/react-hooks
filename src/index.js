@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App'
 // import reportWebVitals from './reportWebVitals';
 
+import './assets/css/resets.css';
+import './assets/css/border.css';
+import './assets/css/ui.css';
+import './assets/js/common.js';
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 

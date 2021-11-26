@@ -21,12 +21,12 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app" 
+      "react-app"
     ],
-    "rules":{
-      "no-undef" :  "off" ,
-      "no-restricted-globals" :  "off" ,
-      "no-unused-vars" :  "off"
+    "rules": {
+      "no-undef": "off",
+      "no-restricted-globals": "off",
+      "no-unused-vars": "off"
     }
   },
   "browserslist": {
@@ -40,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1"
   }
 }
