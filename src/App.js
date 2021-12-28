@@ -1,22 +1,22 @@
-import React,{useReducer} from "react";
-function Example() {
-  function reducer(state,action) {
-    switch(action.type){
-      case 'increment':
-        return {...state,counter:state.counter+1};
-      case 'decrement':
-        return {...state,counter:state.counter-1};
-      default:
-        return state;
-    }
-  }
-  const [state,dispatch] = useReducer(reducer,{counter:0})
+import React, { Fragment, useState } from "react";
+import { Button, Tag, Divider } from "antd";
+
+const ParentComponent = () => {
+
+  const [count, setCount] = useState<number>(0); //{1}
+
   return (
-    <div>
-      <h2>Home当前计数:{state.counter}</h2>
-      <button onClick={e=>dispatch({type:'increment'})}>增加</button>
-      <button onClick={e=>dispatch({type:'decrement'})}>减少</button>
-    </div>
-  );
+    <Fragment>
+      <h5>hooks 性能优化篇</h5>
+      
+      
+
+      <Divider orientation="left">count</Divider>
+      <Tag color="magenta">{count}</Tag>
+      <Button type="primary" onClick={() => setCount((o: number) => o += 1)}>setCount</Button> {/* {2} */}
+
+      <Divider orientation="left">子组件↓</Divider>
+      <ChildComponent /> {/* {3} */}
+    </Fragment>
+  )
 }
-export default Example;
