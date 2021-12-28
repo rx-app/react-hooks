@@ -3,11 +3,12 @@ import MyHeader from './components/Header';
 import AddInput from './components/AddInput';
 
 function App() {
+  let [show,setShow] = useState(false)
   
   return (
     <div>
-      <MyHeader />
-      <AddInput />
+      <MyHeader openInput={ ()=> setShow(!show) }/>
+      <AddInput isShow={ show } />
     </div>
   );
 }
